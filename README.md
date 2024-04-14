@@ -1,4 +1,6 @@
 # The Odin Project Exercises
+This is not an official repository
+from [The Odin Project](https://www.theodinproject.com/)
 ## Images 
    All the images were modified using [ImageMagick](https://imagemagick.org/index.php) on Windows
    `magick convert <input_image> -scale 25% -density 72 -quality 75 <output_image>`
