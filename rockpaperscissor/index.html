@@ -2,6 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <script src="main.js"></script>
+		<link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
     </head>
+	<body id="game-screen">
+		<div id="play-area">
+			<div class="score">
+				Player Score: 
+				<span id="player-score"></span>
+			</div>
+			<div class="score">
+				Computer Score: 
+				<span id="computer-score"></span>
+			</div>
+			<div id="winner-message"></div>
+			<div id="player-choices">
+				<button id="rock">Rock</button>
+				<button id="paper">Paper</button>
+				<button id="scissor">Scissor</button>
+			</div>
+		</div>
+	</body>
 </html>
