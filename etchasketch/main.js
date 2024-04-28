@@ -1,3 +1,10 @@
+function randInt(min, max) {
+	const minCeiled = Math.ceil(min);
+	const maxFloored = Math.floor(max);
+	return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+}
+
+
 function removeGrid() {
 	const sketchArea = document.querySelector("#sketch-area");
 	while (sketchArea.firstChild) {
@@ -16,7 +23,7 @@ function drawGrid(gridSize) {
 	const gridRow = document.createElement("div");
 	gridRow.style.display = "flex";
 
-	cell.style.backgroundColor = "#eeeeee";
+	cell.style.backgroundColor = "#ffffff";
 	cell.style.boxSizing = "border-box";
 	cell.style.width = `${sizeOfCell}px`;
 	cell.style.height = `${sizeOfCell}px`;
@@ -28,12 +35,8 @@ function drawGrid(gridSize) {
 		for (let col = 1; col <= gridSize; col++) {
 			const cellClone = cell.cloneNode(true);
 			cellClone.setAttribute("class", "cell");
-			let hasPainted = false;
 			cellClone.addEventListener("mouseover", () => {
-				if (!hasPainted) {
-					cellClone.style.backgroundColor = "black";
-					hasPainted = true;
-				}
+				cellClone.style.backgroundColor = `#${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}`;
 			});
 			gridRowClone.appendChild(cellClone);
 		}
