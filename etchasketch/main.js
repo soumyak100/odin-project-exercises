@@ -35,14 +35,20 @@ function drawGrid(gridSize) {
 		for (let col = 1; col <= gridSize; col++) {
 			const cellClone = cell.cloneNode(true);
 			cellClone.setAttribute("class", "cell");
-			cellClone.addEventListener("mouseover", () => {
-				cellClone.style.backgroundColor = `#${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}`;
-			});
+			// cellClone.addEventListener("mouseover", () => {
+				// cellClone.style.backgroundColor = `#${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}`;
+			// });
+			setHoverMode(cellClone);
 			gridRowClone.appendChild(cellClone);
 		}
 	}
 }
 
+function setHoverMode(cell) {
+	cell.addEventListener("mouseover", () => {
+		cell.style.backgroundColor = `#${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}${randInt(0, 15).toString(16)}`;
+	});
+}
 
 function init() {
 	const clearGridBtn = document.querySelector("#clear-grid-btn");
